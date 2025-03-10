@@ -23,12 +23,12 @@ if file_not_empty "ioc_report.txt"; then
 
     # Run QradarAPIRefrence.py to add data to Qradar
     # source /etc/venv/bin/activate
-    python3 /pathtothepythoncode/QradarAPIRefrence.py
-    python3 /pathtothepythoncode/splunkiphashadd.py
+    python3 /pathtothepythoncode/Qradar-Refrenceset-Add.py
+    python3 /pathtothepythoncode/splunk-dataset-add.py
     echo "These ips and hases have been added to Qradar splunk  Refrence set" | mutt -s "IOCReport" -a /pathtothepythoncode/*.csv *.txt  -- emailaddress
   else
-    echo "ips.csv and/or hashes.csv are empty. Skipping QradarAPIRefrence.py."
+    echo "ips.csv and/or hashes.csv are empty. Skipping Qradar-Refrenceset-Add.py."
   fi
 else
-  echo "ioc_report.txt is empty. Skipping IOC_Parser.py and QradarAPIRefrence.py."
+  echo "ioc_report.txt is empty. Skipping IOC_Parser.py and Qradar-Refrenceset-Add.py."
 fi
