@@ -28,7 +28,6 @@ def process_csv(file_path, ref_set_name):
 if __name__ == "__main__":
     process_csv('ips.csv', 'IOC_MALICIOUS_IP')
     process_csv('hashes.csv', 'IOC_MALICIOUS_HASH')
-    process_csv('urls.csv', 'IOC_MALICIOUS_URL')
     send_mail("test@test.com", "test1@test.com","IP-HASH-Block-added-to-SIEM")
 
 
